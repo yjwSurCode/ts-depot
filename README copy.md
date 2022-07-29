@@ -1,6 +1,6 @@
-# ts-depot
+# manage-date
 
-js 库
+日期管理
 
 1: 创建 tsconfig.json
 npx tsc --init
@@ -22,8 +22,8 @@ yarn add --save-dev @rollup/plugin-babel @babel/preset-env @babel/plugin-transfo
 @babel/preset-env：babel 预设
 @babel/plugin-transform-runtime：转义代码
 
-5：安装 rollup-plugin-terser
-terser 是什么，它是适用于 ES6 +的 JavaScript 解析器，mangler 和压缩器工具包
+5：安装rollup-plugin-terser
+terser是什么，它是适用于ES6 +的JavaScript解析器，mangler和压缩器工具包
 
 npm config set registry https://registry.npmjs.org/
 
@@ -39,3 +39,4 @@ library-js
 @ts-library
 
 @ts-lib
+
