@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org/",
+      "message": "chore(release): publish"
+    }
+  },
+  "useNx": true,
+  "useWorkspaces": true,
+  "version": "independent"
+}

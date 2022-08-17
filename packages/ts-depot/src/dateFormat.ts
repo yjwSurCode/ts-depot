@@ -1,13 +1,9 @@
-function sayHelloWorld() {
-  console.log("hello world");
-}
-//  标准时间转日期格式：dateFormat("YYYY-mm-dd HH:MM:SS", new Date())  //2022-06-01 11:22:30
-
+/*标准时间转日期格式：dateFormat("YYYY-mm-dd HH:MM:SS", new Date())   2022-06-01 11:22:30  */
 const dateFormat = (fmt: string, date: Date) => {
   if (!fmt) {
     throw console.error("fmt:YYYY-mm-dd HH:MM:SS");
   }
-  let ret;
+  let ret: RegExpExecArray | null;
   const opt: any = {
     "Y+": date.getFullYear().toString(), // 年
     "m+": (date.getMonth() + 1).toString(), // 月
@@ -31,4 +27,4 @@ const dateFormat = (fmt: string, date: Date) => {
   return fmt;
 };
 
-export { dateFormat, sayHelloWorld };
+export default dateFormat;

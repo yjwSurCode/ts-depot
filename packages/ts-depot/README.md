@@ -1,6 +1,6 @@
-# manage-date
+# ts-depot
 
-日期管理
+js 库
 
 1: 创建 tsconfig.json
 npx tsc --init
@@ -22,8 +22,39 @@ yarn add --save-dev @rollup/plugin-babel @babel/preset-env @babel/plugin-transfo
 @babel/preset-env：babel 预设
 @babel/plugin-transform-runtime：转义代码
 
-5：安装rollup-plugin-terser
-terser是什么，它是适用于ES6 +的JavaScript解析器，mangler和压缩器工具包
+5：安装 rollup-plugin-terser
+terser 是什么，它是适用于 ES6 +的 JavaScript 解析器，mangler 和压缩器工具包
+
+6: rollup-plugin-postcss
+​ 结合rollup和postcss， postcss是用 JavaScript 工具和插件转换 CSS 代码，比如增加浏览器前缀、新特性、stylint代码检查
+
+// extract 是否提取css
+// inject Inject CSS into <head>, it's always false when extract: true
+// modules css模块化
+// minimize 压缩
+// use css loader，如sass，less等
+import NpmImport from 'less-plugin-npm-import';
+use: {
+  less: {
+    plugins: [new NpmImport({ prefix: '~' })], // 使用带～前缀引入less文件
+    javascriptEnabled: true,
+    // ...otherOptions
+  },
+  sass: {
+      // ...otherOptions
+  },
+},
+// plugins PostCSS Plugins.
+plugins: [autoprefixer({ // 通过 can i use添加浏览器供应商前缀
+  remove: false,
+})]
+
+
+
+
+lerna包管理器
+
+
 
 npm config set registry https://registry.npmjs.org/
 
@@ -39,4 +70,3 @@ library-js
 @ts-library
 
 @ts-lib
-

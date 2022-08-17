@@ -5,6 +5,17 @@ import rollupTypescript from 'rollup-plugin-typescript2'
 import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json';
+// import { rmoveConsolePlugin } from '../rollup-plugin-removeconsole/src/index'
+// const rmoveConsolePlugin = require('../rollup-plugin-removeconsole/src/index.js')
+
+const chalk = require('chalk');
+const removeConsolePlugin = require('rollup-plugin-removeconsole');
+
+// import removeConsolePlugin from 'rollup-plugin-removeconsole'
+
+
+console.log(chalk.red("ui库, 结果为：" + chalk.blue(removeConsolePlugin), '---'));
+
 
 
 // umd 模式的编译结果文件输出的全局变量名称 
@@ -44,7 +55,7 @@ const config = [
 			// 解析第三方依赖 
 			resolve(), // so Rollup can find `ms`
 			// 识别 commonjs 模式第三方依赖 
-			commonjs(), // so Rollup can convert `ms` to an ES module
+			commonjs({ include: rmoveConsolePlugin }), // so Rollup can convert `ms` to an ES module
 			// rollup 编译 typescript 
 			rollupTypescript(),
 			// babel 配置 
@@ -59,7 +70,8 @@ const config = [
 					'.ts',
 				],
 			}),
-			terser()
+			// terser(),
+			removeConsolePlugin()
 		]
 	},
 

@@ -1,0 +1,19 @@
+{
+  "name": "rollup-plugin-removeconsole",
+  "version": "1.0.0",
+  "description": "移除console.log ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "author": "sur-code",
+  "license": "ISC",
+  "dependencies": {
+    "rollup-pluginutils": "^2.8.2",
+    "showdown": "^2.1.0"
+  }
+}
